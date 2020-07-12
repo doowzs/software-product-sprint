@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8">
     <title>Tianyun's Portfolio</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/sakura.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/sakura.css">
   </head>
-  <body>
+  <body onload="loadData()">
     <header>
     </header>
     <main>
-      <article>
+      <article id="article">
         <h1>Tianyun Zhang 张天昀</h1>
         <p style="text-align:center;margin-top:2.5rem;"><img src="images/selfie.jpg" width="80%"/></p>
         <hr/>
@@ -46,7 +46,10 @@
           Blog posts are constructed using a traditional MVC architecture, while other parts are implemented in MVVM pattern with VueJS. The kanban on the homepage works smoothly and forms a workflow for eliminating deadlines.
         </p>
         <p style="text-align:center;"><img src="images/jb-homepage.png" width="80%"/></p>
+        <hr/>
+        <div id="data"></div>
       </article>
     </main>
   </body>
+  <script type="text/javascript" src="/js/main.js"></script>
 </html>
