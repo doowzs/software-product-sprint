@@ -48,7 +48,12 @@
         <p style="text-align:center;"><img src="images/jb-homepage.png" width="80%"/></p>
         <hr/>
         <h3>Comments</h3>
-        <div id="comments"><!--To be injected by loadComments()--></div>
+        <form action="/comments" method="POST">
+          <input type="text" name="name" placeholder="Name"></input>
+          <textarea type="text" rows=5 name="content" placeholder="Content"></textarea>
+          <button type="submit">Submit</button>
+        </form>
+        <div id="comments" style="margin-top:3rem;"><!--To be injected by loadComments()--></div>
       </article>
     </main>
   </body>
