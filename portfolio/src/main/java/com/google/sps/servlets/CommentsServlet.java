@@ -27,15 +27,20 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/comments")
 public class CommentsServlet extends HttpServlet {
 
+  private static ArrayList<Comment> comments = new ArrayList<Comment>();
+
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     Gson gson = new Gson();
-    
-    ArrayList<Comment> comments = new ArrayList<Comment>();
-    comments.add(new Comment("Tianyun", new Date(), "Hello, world!"));
-    comments.add(new Comment("John Smith", new Date(), "Looks great."));
-
     response.setContentType("application/json;");
     response.getWriter().println(gson.toJson(comments));
+  }
+
+  @Override
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    String name = request.getParameter("name");
+    String content = request.getParameter("content");
+    comments.add(new Comment(name, new Date(), content));
+    response.sendRedirect("/");
   }
 }
