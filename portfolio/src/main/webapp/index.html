@@ -48,11 +48,19 @@
         <p style="text-align:center;"><img src="images/jb-homepage.png" width="80%"/></p>
         <hr/>
         <h3>Comments</h3>
-        <form action="/comments" method="POST">
-          <input type="text" name="name" placeholder="Name"></input>
-          <textarea type="text" rows=5 name="content" placeholder="Content"></textarea>
-          <button type="submit">Submit</button>
-        </form>
+        <div id="new-comment-anonymous" style="display:none;">
+          <p>You need to <a id="login-link" href="#">login</a> to make a comment.</p>
+        </div>
+        <div id="new-comment-logged-in" style="display:none;">
+          <p>
+            You are logged in as <b id="user-email"></b>. <a id="logout-link" href="#">Logout</a>
+          </p>
+          <form action="/comments" method="POST">
+            <input type="text" name="name" placeholder="Name"></input>
+            <textarea type="text" rows=5 name="content" placeholder="Content"></textarea>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
         <div id="comments" style="margin-top:3rem;"><!--To be injected by loadComments()--></div>
       </article>
     </main>
