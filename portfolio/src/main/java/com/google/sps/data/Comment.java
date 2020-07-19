@@ -19,17 +19,23 @@ import java.util.Date;
 public final class Comment {
     
     private final String name;
+    private final String email;
     private final Date date;
     private final String content;
 
-    public Comment(String name, Date date, String content) {
+    public Comment(String name, String email, Date date, String content) {
         this.name = name;
+        this.email = email;
         this.date = date;
         this.content = content;
     }
 
     public String getName() {
         return name;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
     public Date getDate() {
