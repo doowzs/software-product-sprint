@@ -27,7 +27,6 @@ const fetchUserStatus = () => {
   fetch('/user-status')
     .then(res => res.json())
     .then(status => {
-      console.log(status);
       loginLink = document.getElementById('login-link');
       logoutLink = document.getElementById('logout-link');
       emailElement = document.getElementById('user-email');
